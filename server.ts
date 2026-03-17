@@ -1,8 +1,11 @@
 import express from "express";
 import { createServer as createViteServer } from "vite";
-import Database from "better-sqlite3";
+import { createRequire } from "module";
 import path from "path";
 import { fileURLToPath } from "url";
+
+const require = createRequire(import.meta.url);
+const Database = require("better-sqlite3");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -198,6 +201,7 @@ async function startServer() {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
+      root: __dirname,
     });
     app.use(vite.middlewares);
   } else {
