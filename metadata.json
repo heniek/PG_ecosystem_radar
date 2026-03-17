@@ -1,0 +1,5 @@
+{
+  "name": "Remix: PostgreSQL Ecosystem Radar",
+  "description": "Compare top 20 PostgreSQL support companies based on their latest news, blogs, and market focus using AI-powered summaries.",
+  "requestFramePermissions": []
+}

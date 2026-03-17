@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&family=Anton&family=Space+Grotesk:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Playfair Display", serif;
+  --font-outfit: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-brutal: "Anton", sans-serif;
+  --font-tech: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --bg: #E4E3E0;
+  --ink: #141414;
+  --accent: #10b981; /* emerald-500 */
+  --line: rgba(20, 20, 20, 0.1);
+  --surface: rgba(255, 255, 255, 0.5);
+  --surface-strong: #ffffff;
+  --ink-muted: rgba(20, 20, 20, 0.6);
+  --font-main: var(--font-sans);
+  --font-heading: var(--font-sans);
+}
+
+[data-theme='dark'] {
+  --bg: #141414;
+  --ink: #E4E3E0;
+  --line: rgba(228, 227, 224, 0.1);
+  --surface: rgba(228, 227, 224, 0.05);
+  --surface-strong: #1a1a1a;
+  --ink-muted: rgba(228, 227, 224, 0.6);
+}
+
+[data-mode='midnight'] {
+  --bg: #050505;
+  --ink: #D4AF37; /* Gold */
+  --accent: #F27D26; /* Orange */
+  --line: rgba(212, 175, 55, 0.2);
+  --surface: rgba(212, 175, 55, 0.05);
+  --surface-strong: #0a0a0a;
+  --ink-muted: rgba(212, 175, 55, 0.7);
+  --font-main: var(--font-outfit);
+  --font-heading: var(--font-display);
+}
+
+[data-mode='nordic'] {
+  --bg: #1A1C1A;
+  --ink: #8FBC8F; /* Dark Sea Green */
+  --accent: #D2B48C; /* Tan */
+  --line: rgba(143, 188, 143, 0.2);
+  --surface: rgba(26, 28, 26, 0.8);
+  --surface-strong: #242624;
+  --ink-muted: rgba(143, 188, 143, 0.7);
+  --font-main: var(--font-serif);
+  --font-heading: var(--font-serif);
+}
+
+[data-mode='cyberpunk'] {
+  --bg: #0D0221;
+  --ink: #00F5FF; /* Cyan */
+  --accent: #FF00E5; /* Neon Pink */
+  --line: rgba(0, 245, 255, 0.2);
+  --surface: rgba(13, 2, 33, 0.8);
+  --surface-strong: #1A0B3C;
+  --ink-muted: rgba(0, 245, 255, 0.6);
+  --font-main: var(--font-tech);
+  --font-heading: var(--font-mono);
+}
+
+[data-mode='brutalist'] {
+  --bg: #FFFFFF;
+  --ink: #000000;
+  --accent: #00FF00; /* Neon Green */
+  --line: #000000;
+  --surface: #FFFFFF;
+  --surface-strong: #F0F0F0;
+  --ink-muted: rgba(0, 0, 0, 0.7);
+  --font-main: var(--font-sans);
+  --font-heading: var(--font-brutal);
+}
+
+[data-mode='forest'] {
+  --bg: #F0F4F0;
+  --ink: #1B2620;
+  --accent: #5A7D6B; /* Muted Forest Green */
+  --line: rgba(27, 38, 32, 0.1);
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #FFFFFF;
+  --ink-muted: rgba(27, 38, 32, 0.6);
+  --font-main: var(--font-sans);
+  --font-heading: var(--font-serif);
+}
+
+body {
+  @apply antialiased transition-colors duration-500 bg-[var(--bg)] text-[var(--ink)];
+  font-family: var(--font-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom scrollbar for a more refined look */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  opacity: 0.2;
+  border-radius: 10px;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
