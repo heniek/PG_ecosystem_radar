@@ -3,14 +3,14 @@
     "target": "ES2022",
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "module": "ESNext",
+    "module": "NodeNext",
     "lib": [
-      "ES2022",
+      "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowJs": true,
